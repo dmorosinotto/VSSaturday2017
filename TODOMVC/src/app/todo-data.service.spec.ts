@@ -1,25 +1,25 @@
 import {TestBed, async, inject} from '@angular/core/testing';
 import {Todo} from './todo';
-import {TodoDataService} from './todo-data.service';
+import {APIService} from './todo-data.service';
 
 describe('TodoDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TodoDataService]
+      providers: [APIService]
     });
   });
 
-  it('should ...', inject([TodoDataService], (service: TodoDataService) => {
+  it('should ...', inject([APIService], (service: APIService) => {
     expect(service).toBeTruthy();
   }));
 
   describe('#getAllTodos()', () => {
 
-    it('should return an empty array by default', inject([TodoDataService], (service: TodoDataService) => {
+    it('should return an empty array by default', inject([APIService], (service: APIService) => {
       expect(service.getAllTodos()).toEqual([]);
     }));
 
-    it('should return all todos', inject([TodoDataService], (service: TodoDataService) => {
+    it('should return all todos', inject([APIService], (service: APIService) => {
       let todo1 = new Todo({title: 'Hello 1', complete: false});
       let todo2 = new Todo({title: 'Hello 2', complete: true});
       service.addTodo(todo1);
@@ -31,7 +31,7 @@ describe('TodoDataService', () => {
 
   describe('#save(todo)', () => {
 
-    it('should automatically assign an incrementing id', inject([TodoDataService], (service: TodoDataService) => {
+    it('should automatically assign an incrementing id', inject([APIService], (service: APIService) => {
       let todo1 = new Todo({title: 'Hello 1', complete: false});
       let todo2 = new Todo({title: 'Hello 2', complete: true});
       service.addTodo(todo1);
@@ -44,7 +44,7 @@ describe('TodoDataService', () => {
 
   describe('#deleteTodoById(id)', () => {
 
-    it('should remove todo with the corresponding id', inject([TodoDataService], (service: TodoDataService) => {
+    it('should remove todo with the corresponding id', inject([APIService], (service: APIService) => {
       let todo1 = new Todo({title: 'Hello 1', complete: false});
       let todo2 = new Todo({title: 'Hello 2', complete: true});
       service.addTodo(todo1);
@@ -56,7 +56,7 @@ describe('TodoDataService', () => {
       expect(service.getAllTodos()).toEqual([]);
     }));
 
-    it('should not removing anything if todo with corresponding id is not found', inject([TodoDataService], (service: TodoDataService) => {
+    it('should not removing anything if todo with corresponding id is not found', inject([APIService], (service: APIService) => {
       let todo1 = new Todo({title: 'Hello 1', complete: false});
       let todo2 = new Todo({title: 'Hello 2', complete: true});
       service.addTodo(todo1);
@@ -70,7 +70,7 @@ describe('TodoDataService', () => {
 
   describe('#updateTodoById(id, values)', () => {
 
-    it('should return todo with the corresponding id and updated data', inject([TodoDataService], (service: TodoDataService) => {
+    it('should return todo with the corresponding id and updated data', inject([APIService], (service: APIService) => {
       let todo = new Todo({title: 'Hello 1', complete: false});
       service.addTodo(todo);
       let updatedTodo = service.updateTodoById(1, {
@@ -79,7 +79,7 @@ describe('TodoDataService', () => {
       expect(updatedTodo.title).toEqual('new title');
     }));
 
-    it('should return null if todo is not found', inject([TodoDataService], (service: TodoDataService) => {
+    it('should return null if todo is not found', inject([APIService], (service: APIService) => {
       let todo = new Todo({title: 'Hello 1', complete: false});
       service.addTodo(todo);
       let updatedTodo = service.updateTodoById(2, {
@@ -92,7 +92,7 @@ describe('TodoDataService', () => {
 
   describe('#toggleTodoComplete(todo)', () => {
 
-    it('should return the updated todo with inverse complete status', inject([TodoDataService], (service: TodoDataService) => {
+    it('should return the updated todo with inverse complete status', inject([APIService], (service: APIService) => {
       let todo = new Todo({title: 'Hello 1', complete: false});
       service.addTodo(todo);
       let updatedTodo = service.toggleTodoComplete(todo);

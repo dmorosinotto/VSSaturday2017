@@ -1,8 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Todo} from './todo';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
-export class TodoDataService {
+export class APIService {
 
   // Placeholder for last id so we can simulate
   // automatic incrementing of id's
@@ -11,11 +14,19 @@ export class TodoDataService {
   // Placeholder for todo's
   todos: Todo[] = [];
 
-  constructor() {
+  constructor(private http: Http) {
+    this.reload();
+  }
+
+  public reload() {
+    console.log("CHIAMO WEBAPI .NET - RICORDARSI ABILITARE CORS!")
+    this.http.get("http://localhost:5000/api/todos")
+      .map(res => res.json())
+      .subscribe(data => this.todos = data);
   }
 
   // Simulate POST /todos
-  addTodo(todo: Todo): TodoDataService {
+  addTodo(todo: Todo): APIService {
     if (!todo.id) {
       todo.id = ++this.lastId;
     }
@@ -24,7 +35,7 @@ export class TodoDataService {
   }
 
   // Simulate DELETE /todos/:id
-  deleteTodoById(id: number): TodoDataService {
+  deleteTodoById(id: number): APIService {
     this.todos = this.todos
       .filter(todo => todo.id !== id);
     return this;

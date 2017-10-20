@@ -4,7 +4,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { Todo } from './todo';
-import { TodoDataService } from './todo-data.service';
+import { APIService } from './todo-data.service';
 
 describe('AppComponent', () => {
   let fixture;
@@ -19,14 +19,14 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      providers: [TodoDataService]
+      providers: [APIService]
     });
   });
 
   beforeEach(async(() => {
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.debugElement.componentInstance;
-    todoDataService = fixture.debugElement.injector.get(TodoDataService);
+    todoDataService = fixture.debugElement.injector.get(APIService);
   }));
 
   it('should create the app', async(() => {

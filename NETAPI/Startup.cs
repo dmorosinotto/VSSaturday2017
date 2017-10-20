@@ -24,6 +24,7 @@ namespace NETAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +35,10 @@ namespace NETAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            // Enable CORS - !!!BEFORE!!! - app.UseMvc()
+            app.UseCors( builder => builder.WithOrigins("*")
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader() );
             app.UseMvc();
         }
     }

@@ -5,6 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch .NET (console)",
+            "type": "coreclr",
+            "request": "launch",
+            //"preLaunchTask": "build",
+            "program": "${workspaceRoot}/NETAPI/bin/Debug/netcoreapp2.0/NETAPI.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}/NETAPI",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceRoot}/TODOMVC"
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
@@ -15,6 +33,15 @@
             "request": "launch",
             "name": "NODE Debug",
             "program": "${workspaceFolder}/HTML_NODE/server.js"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "DEBUG ALL .NET + NG",
+            "configurations": [
+                "Launch .NET (console)",
+                "Launch Chrome"
+            ]
         }
     ]
 }
