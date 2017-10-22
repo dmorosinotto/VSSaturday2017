@@ -9,4 +9,4 @@
 ![ME Presenting](photo/me_presenting.jpeg) | ![Davide with Cubetto - VSCODE Editor or IDE](photo/davide_with_cubetto.jpeg)
 
 ### Thanks to everyone who comed to participate at my session.
-![live1](photo/live1.jpeg) | ![live2](photo/live2.jpeg) | ![live3](photo/live3.jpeg) | ![live4](photo/live4.jpeg)
+![live1](photo/live1.jpg) | ![live2](photo/live2.JPG) | ![live3](photo/live3.JPG) | ![live4](photo/live4.JPG)
