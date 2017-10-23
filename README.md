@@ -6,7 +6,11 @@
 [![VIDEO LIVE SESSION](https://img.youtube.com/vi/OyoJcj2pNYo/0.jpg)](https://www.youtube.com/watch?v=OyoJcj2pNYo)
 
 ### Kudos to [Marco](https://twitter.com/marcobortolin) for great photos!
+
+ME start presenting VSCODE on my Mac, and ... | [Davide](https://twitter.com/davidecontin) helping w/[Cubetto](https://www.primotoys.com) -Q: VSCODE Editor or IDE?
+:---: | :---: 
 ![ME Presenting](photo/me_presenting.jpeg) | ![Davide with Cubetto - VSCODE Editor or IDE](photo/davide_with_cubetto.jpeg)
 
-### Thanks to everyone who comed to participate at my session.
-![live1](photo/live1.jpg) | ![live2](photo/live2.JPG) | ![live3](photo/live3.JPG) | ![live4](photo/live4.JPG)
+ Thanks | to **EVERYONE** | who partecipated | to my session. 
+:---: | :---: | :---: | :---: 
+![live2](photo/live2.JPG) | ![live1](photo/live1.jpg) | ![live3](photo/live3.JPG) | ![live4](photo/live4.JPG)
